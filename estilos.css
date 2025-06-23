@@ -1,0 +1,226 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #ffc7c7;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.navbar h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #d44d4d;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.navbar a,
+.navbar button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff7f7f;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: #e86464;
+  transform: scale(1.03);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* FORMULARIO */
+.formulario {
+  background-color: #ffe4e1;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.formulario h2 {
+  margin-bottom: 15px;
+  color: #d44d4d;
+  font-size: 20px;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fffdfa;
+}
+
+.formulario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario button {
+  background-color: #ff7f7f;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #e86464;
+}
+
+/* RECETAS */
+.receta {
+  background: linear-gradient(to bottom right, #fffdfa, #ffe4e1);
+  border: 2px solid #ffb6b6;
+  border-left: 6px solid #ff7f7f;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.receta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(255, 182, 193, 0.4);
+}
+
+.receta::before {
+  content: "🍰";
+  font-size: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.8;
+}
+
+.receta h2 {
+  font-size: 22px;
+  color: #d44d4d;
+  margin-bottom: 12px;
+  border-bottom: 2px dashed #ffb6b6;
+  padding-bottom: 4px;
+}
+
+.receta h3 {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: #e97d7d;
+  font-weight: 600;
+}
+
+.receta ul,
+.receta ol {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.receta li {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar a,
+  .navbar button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .contenedor {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario input,
+  .formulario textarea {
+    font-size: 14px;
+  }
+
+  .formulario button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .navbar a,
+  .navbar button {
+    font-size: 13px;
+  }
+
+  .receta {
+    padding: 15px;
+  }
+}

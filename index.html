@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recetas - Dulcemania</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1 class="titulo">Dulcemania</h1>
+    <img src="logo.png" alt="logo" class="logo">
+    <ul>
+      <li><button id="btn-toggle-form">Agregar Receta</button></li>
+    </ul>
+  </nav>
+
+  <main class="contenedor">
+    <h1>Recetas</h1>
+
+    <!-- FORMULARIO OCULTO -->
+    <section class="formulario" id="formulario-receta" style="display: none;">
+      <h2>Nueva receta</h2>
+      <form id="form-receta">
+        <input type="text" id="titulo" placeholder="Título de la receta" required />
+        <textarea id="ingredientes" placeholder="Ingredientes (uno por línea)" required></textarea>
+        <textarea id="instrucciones" placeholder="Instrucciones (paso por paso)" required></textarea>
+        <button type="submit">Agregar Receta</button>
+      </form>
+    </section>
+
+    <!-- LISTA DE RECETAS -->
+    <section id="recetas">
+      <!-- Recetas iniciales -->
+      <div class="receta">
+        <h2>Galletas con chispas de chocolate</h2>
+        <h3>Ingredientes:</h3>
+        <ul>
+          <li>210gr de harina de trigo</li>
+          <li>115gr mantequilla</li>
+          <li>1 huevo</li>
+          <li>60gr azúcar morena</li>
+          <li>40 gr azúcar blanca</li>
+          <li>chispas</li>
+          <li>1 cucharadita de bicarbonato de sodio</li>
+        </ul>
+        <h3>Instrucciones:</h3>
+        <ol>
+          <li>Primero derretir la mantequilla y ponerlo en un recipiente.</li>
+          <li>Segundo echamos el azúcar blanca y morena, se mueve todo hasta que se disuelva.</li>
+          <li>Tercero echamos el huevo y removemos bien que se integre.</li>
+          <li>Cuarto echamos la harina, el bicarbonato y removemos hasta que se integre.</li>
+          <li>Quinto echamos las chispas de chocolate y ponemos la masa haciendo círculos a la fuente, terminando eso lo metemos al refrigerador.</li>
+          <li>Por ultimo lo sacamos de la refri y lo ponemos en el horno a 180° por 18 min.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+<!-- Tu configuración -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAy1-n0M6E7iouhlRXUsvufugpjJvPNJeA",
+    authDomain: "recetas-ad371.firebaseapp.com",
+    databaseURL: "https://recetas-ad371-default-rtdb.firebaseio.com",
+    projectId: "recetas-ad371",
+    storageBucket: "recetas-ad371.firebasestorage.app",
+    messagingSenderId: "825375735991",
+    appId: "1:825375735991:web:9feeff4f34e020a1c38d32"
+  };
+
+  // Inicializar Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
