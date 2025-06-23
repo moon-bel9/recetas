@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     formulario.style.display = formulario.style.display === 'none' ? 'block' : 'none';
   });
 
-  // Mostrar recetas desde Firebase
   database.ref('recetas').on('child_added', (snapshot) => {
     const receta = snapshot.val();
     contenedorRecetas.insertAdjacentHTML('beforeend', generarHTMLReceta(receta));
   });
 
-  // Guardar nueva receta
   document.getElementById('form-receta').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -23,8 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const ingredientes = document.getElementById('ingredientes').value.trim();
     const instrucciones = document.getElementById('instrucciones').value.trim();
 
+    if (!titulo || !ingredientes || !instrucciones) return;
+
     const nuevaReceta = { titulo, ingredientes, instrucciones };
 
+    // Guardar en Firebase
     database.ref('recetas').push(nuevaReceta);
 
     this.reset();
